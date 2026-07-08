@@ -47,7 +47,7 @@ sudo apt install libcurl4-openssl-dev
 * rs_rag_1/example.db , db file copy
 
 ***
-* env value
+* .env
 
 ```
 LD_LIBRARY_PATH=.
