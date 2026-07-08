@@ -9,6 +9,7 @@
 #include <map>
 #include <curl/curl.h>
 #include <nlohmann/json.hpp>
+#include "dotenv.h"
 
 #include "GeminiEmbeddingClient.hpp"
 #include "db_add.hpp"
@@ -105,8 +106,9 @@ private:
     }
 
     std::string rag_search_handler(std::string query){
+        std::string ret = "";
+        dotenv::init();
         try{
-            std::string ret = "";
             std::string dirPath = DATA_PATH;
             // API_KEYを環境変数から取得（または直接設定）
             const char* api_key = std::getenv("OPENROUTER_API_KEY");
@@ -170,6 +172,7 @@ private:
         } catch (const std::exception& e) {
             std::cout << "Error , main" << std::endl;
         }  
+        return ret;
     }
 
     void rag_add_handler(){

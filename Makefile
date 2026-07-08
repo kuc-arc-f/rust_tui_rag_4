@@ -1,11 +1,11 @@
 CXX = clang++
 #CXX = g++
-CXXFLAG_1= -I./include -I/prog/vcpkg/installed/x64-windows/include
-CXXFLAG_LIB_1= -L/prog/vcpkg/installed/x64-windows/lib
+CXXFLAG_1= -I./include
+#CXXFLAG_1= -I./include -I/prog/vcpkg/installed/x64-windows/include
+#CXXFLAG_LIB_1= -L/prog/vcpkg/installed/x64-windows/lib
 
-CXXFLAGS = -shared -fPIC -std=c++17 -lsqlite3 -lcurl -luuid $(CXXFLAG_1) $(CXXFLAG_LIB_1)
-#CXXFLAGS = -std=c++17 $(CXXFLAG_1) $(CXXFLAG_2)
-#g++ -shared -fPIC -o libsample.so sample.cpp
+CXXFLAGS = -shared -fPIC -std=c++17 -lsqlite3 -lcurl -luuid $(CXXFLAG_1)
+#CXXFLAGS = -shared -fPIC -std=c++17 -lsqlite3 -lcurl -luuid $(CXXFLAG_1) $(CXXFLAG_LIB_1)
 
 TARGET = libsample.so
 all: $(TARGET)

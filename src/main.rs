@@ -28,7 +28,6 @@ use serde::Deserialize;
 extern "C" {
     // メモリ解放
     fn free_string(ptr: *mut c_char);    
-    fn rag_add() -> *mut c_char;
     fn rag_search(input: *const c_char) -> *mut c_char;
 
     // 文字列処理（受信→加工→返却）
