@@ -50,10 +50,10 @@ sudo apt install libcurl4-openssl-dev
 * env value
 
 ```
-export LD_LIBRARY_PATH=.
-export GEMINI_API_KEY=your-key
-export OPENROUTER_MODEL=deepseek/deepseek-v4-flash
-export OPENROUTER_API_KEY=your-key
+LD_LIBRARY_PATH=.
+GEMINI_API_KEY=your-key
+OPENROUTER_API_KEY=your-key
+OPENROUTER_MODEL=deepseek/deepseek-v4-flash
 ```
 
 ***
