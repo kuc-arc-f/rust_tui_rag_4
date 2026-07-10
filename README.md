@@ -1,10 +1,10 @@
 ﻿# rust_tui_rag_4
 
- Version: 0.9.1
+ Version: 0.9.2
 
  date    : 2026/06/14 
 
- update :
+ update : 2026/07/10
 
 ***
 
@@ -74,3 +74,9 @@ cargo run
 
 https://zenn.dev/knaka0209/scraps/65381f12905d8c
 
+***
+### version
+
+* V_0_9_1: new
+
+***
