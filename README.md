@@ -25,7 +25,7 @@ https://github.com/kuc-arc-f/rust_cpp1/tree/main/rs_rag_1
 
 * RAG APP
 
-![img1](./images/rust_tui_rag_4.png)
+![img1](/images/rust_tui_rag_4_2.png)
 
 ***
 ### related
