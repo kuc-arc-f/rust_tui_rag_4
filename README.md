@@ -13,12 +13,8 @@ Rust C++ , Ratatui RAG SQLite TUI
 * OpenRouter
 * embedding : Gemini-embedding-001
 * LLVM CLang
+* gcc version 14.2.0
 * Linux
-
-***
-### vector data add
-
-https://github.com/kuc-arc-f/rust_cpp1/tree/main/rs_rag_1
 
 ***
 ## Image
@@ -42,9 +38,6 @@ sudo apt install nlohmann-json3-dev
 sudo apt install libsqlite3-dev
 sudo apt install libcurl4-openssl-dev
 ```
-***
-* example.db
-* rs_rag_1/example.db , db file copy
 
 ***
 * .env
@@ -55,11 +48,27 @@ GEMINI_API_KEY=your-key
 OPENROUTER_API_KEY=your-key
 OPENROUTER_MODEL=deepseek/deepseek-v4-flash
 ```
+***
+* db add
+```
+sqlite3 ./example.db < table.sql
+```
+***
+* cpp build
 
+```
+g++ -std=c++17 -I./include -o embed embed.cpp -lcurl -lsqlite3 -luuid
+g++ -std=c++17 -I./include -o search search.cpp -lcurl -lsqlite3 -lm
+make all
+```
+
+* embed
+```
+./embed ./data
+```
 ***
 * build
 ```
-make all
 cargo build
 cargo run
 ```
