@@ -58,7 +58,6 @@ sqlite3 ./example.db < table.sql
 
 ```
 g++ -std=c++17 -I./include -o embed embed.cpp -lcurl -lsqlite3 -luuid
-g++ -std=c++17 -I./include -o search search.cpp -lcurl -lsqlite3 -lm
 make all
 ```
 
