@@ -10,7 +10,7 @@
 #include <sqlite3.h>
 #include <nlohmann/json.hpp> // JSONライブラリ
 #include "my_config.hpp"
-#include "http_client.hpp"
+//#include "http_client.hpp"
 
 using namespace std;
 // JSON用エイリアス
@@ -157,40 +157,6 @@ public:
             std::cerr << "[ERROR] JSON parse: " << e.what() << "\n";
             return "";
         }
-    }
-    std::string send_chat(std::string query) {
-        std::string ret = "";
-
-        ChatQuery req2;
-        req2.role = "user";
-        req2.content = query;
-        json j2 = req2;
-        std::string json_str2 = j2.dump();
-        std::vector<ChatQuery> chat_messages;
-        chat_messages.push_back(req2);
-
-        std::string target_msg = "[";
-        target_msg.append(json_str2);
-        target_msg.append("]");
-        ChatRequest req3;
-        req3.model = "local-model";
-        req3.messages = chat_messages;
-        req3.temperature = 0.7;
-        json j3 = req3; // 構造体を代入するだけ！
-        std::string json_str3 = j3.dump();
-        HttpClient client;
-
-        auto resp = client.post(
-            API_URL_CHAT,
-            json_str3
-            // Content-Type は省略時 "application/json" が使われる
-        );      
-        if(!resp.empty()) {
-            std::string reply = extractContent(resp);
-            //std::cout << "Assistant: " << reply  << std::endl;
-            return reply;
-        }   
-        return ret;  
     }
 
     std::string rag_search(std::vector<float> embedding) {
